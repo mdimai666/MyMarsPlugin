@@ -11,6 +11,6 @@
 Выполните следующую команду в PowerShell для клонирования и автоматической настройки плагина:
 
 ```powershell
-# Клонирование и настройка плагина
+# Клонирование и настройка плагина. Используйте слово Plugin в конце
 $newPluginName = "MyNewPlugin"; git clone https://github.com/mdimai666/MyMarsPlugin.git $newPluginName; cd $newPluginName; .\prepare.ps1 $newPluginName
 ```
