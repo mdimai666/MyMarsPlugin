@@ -9,7 +9,7 @@ $newName = $args[0]
 # 1. Run rename.ps1 with "newName" argument
 if (Test-Path ".\rename.ps1") {
     Write-Host "Running rename.ps1 with newName=$newName argument..."
-    Start-Process powershell.exe -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"rename.ps1`" `"$newName`"" -Wait
+    & ".\rename.ps1" $newName
 }
 
 # 2. Delete specified files and directories
