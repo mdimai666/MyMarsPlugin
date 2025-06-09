@@ -4,7 +4,13 @@
     <img src="assets/icon.png" alt="logo" />
 </p>
 
-Шаблон для создания новых плагинов
+<p align="center">
+  <a href="https://www.nuget.org/packages/mdimai666.Mars.Core">
+    <img src="https://img.shields.io/nuget/v/mdimai666.Mars.Core" alt="nuget Version" />
+  </a>
+</p>
+
+Шаблон для создания новых плагинов для [Mars](https://github.com/mdimai666/Mars)
 
 ## Быстрый старт
 
