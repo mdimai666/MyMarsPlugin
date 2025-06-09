@@ -1,0 +1,29 @@
+@using AppFront.Shared.Components
+@using Mars.Nodes.Core
+@using Mars.Nodes.Core.Attributes
+@using Mars.Nodes.FormEditor
+@using Mars.Nodes.FormEditor.EditForms.Components
+@using Microsoft.FluentUI.AspNetCore.Components
+@using MyMarsPlugin.Front.Nodes
+@inherits NodeEditForm
+@attribute [NodeEditFormForNode(typeof(MyPluginNode))]
+
+<div class="form-group compact" style="--fluent-input-label-basis:150px">
+    <div class="vstack gap-2">
+
+        <FormItem2 For="() => Node.Config">
+            <InputConfigField @bind-Value=@Node.Config TConfig="MyPluginConfigNode" />
+        </FormItem2>
+
+        <FormItem2 For="() => Node.InputString1">
+            <FluentTextField @bind-Value=@Node.InputString1 Class="" />
+        </FormItem2>
+
+    </div>
+</div>
+
+@code {
+    [CascadingParameter] Node? Value { get; set; }
+    MyPluginNode Node { get => (MyPluginNode)Value!; set => Value = value; }
+
+}
