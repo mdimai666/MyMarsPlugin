@@ -24,7 +24,7 @@ public class MyPluginNodeImpl : INodeImplement<MyPluginNode>, INodeImplement
         _logger = RED.ServiceProvider.GetRequiredService<ILogger<MyPluginNodeImpl>>();
     }
 
-    public Task Execute(NodeMsg input, ExecuteAction callback)
+    public Task Execute(NodeMsg input, ExecuteAction callback, ExecutionParameters parameters)
     {
         _logger.LogTrace("Execute");
 

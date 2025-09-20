@@ -37,9 +37,9 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="mdimai666.Mars.Host.Data" Version="0.6.2-alpha.27" />
-        <PackageReference Include="mdimai666.Mars.Plugin.PluginPublishScript" Version="0.6.2-alpha.27" />
-        <PackageReference Include="mdimai666.Mars.Plugin.Kit.Host" Version="0.6.2-alpha.27" />
+        <PackageReference Include="mdimai666.Mars.Host.Data" Version="0.6.7-alpha.7" />
+        <PackageReference Include="mdimai666.Mars.Plugin.PluginPublishScript" Version="0.6.7-alpha.7" />
+        <PackageReference Include="mdimai666.Mars.Plugin.Kit.Host" Version="0.6.7-alpha.7" />
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.2" PrivateAssets="all" />
     </ItemGroup>

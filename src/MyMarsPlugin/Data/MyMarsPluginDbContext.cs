@@ -8,7 +8,7 @@ namespace MyMarsPlugin.Data;
 
 public partial class MyMarsPluginDbContext : PluginDbContextBase
 {
-    public override string PluginName => MainMyMarsPlugin.PluginPackageName;
+    public override string SchemaName => MainMyMarsPlugin.PluginPackageName;
 
     public virtual DbSet<PluginNewsEntity> News { get; set; } = default!;
 

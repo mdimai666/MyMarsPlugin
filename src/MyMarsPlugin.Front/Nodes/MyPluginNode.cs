@@ -15,7 +15,7 @@ public class MyPluginNode : Node
 
     public MyPluginNode()
     {
-        HaveInput = true;
+        Inputs = [new()];
         Color = "#3fc9af";
         Outputs = new List<NodeOutput> { new NodeOutput() };
         Icon = "/_plugin/MyMarsPlugin/nodes/img/icon.png";

@@ -10,6 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
 		README.md = README.md
+		rename.ps1 = rename.ps1
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMarsPlugin.Front", "src\MyMarsPlugin.Front\MyMarsPlugin.Front.csproj", "{E08BEFE3-E48B-4B2F-9BAD-29681CE6B587}"
