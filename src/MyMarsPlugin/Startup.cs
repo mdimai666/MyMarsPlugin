@@ -1,7 +1,6 @@
 using Mars.Host.Shared.Services;
-using Mars.Nodes.Core;
-using Mars.Nodes.Core.Implements;
 using Mars.Plugin.Abstractions;
+using Mars.Plugin.Kit.Host;
 using Mars.Plugin.PluginHost;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
@@ -11,9 +10,6 @@ using Microsoft.Extensions.Logging;
 using MyMarsPlugin;
 using MyMarsPlugin.Data;
 using MyMarsPlugin.Front;
-using MyMarsPlugin.Front.Nodes;
-using MyMarsPlugin.Front.Nodes.Forms;
-using MyMarsPlugin.FrontImplement;
 using MyMarsPlugin.Services;
 using MyMarsPlugin.Shared.Options;
 using MyMarsPlugin.Shared.Resources;
@@ -38,15 +34,13 @@ public class MainMyMarsPlugin : WebApplicationPlugin
 
     public override void ConfigureWebApplication(WebApplication app, PluginSettings settings)
     {
-        NodesLocator.RegisterAssembly(typeof(MyPluginNode).Assembly);
-        NodeFormsLocator.RegisterAssembly(typeof(MyPluginNodeForm).Assembly);
-        NodeImplementFabirc.RegisterAssembly(typeof(MyPluginNodeImpl).Assembly);
+        app.Services.AutoHostRegisterHelper([GetType().Assembly, typeof(MainMyMarsPluginFront).Assembly]);
 
         var logger = MarsLogger.GetStaticLogger<MainMyMarsPlugin>();
         logger.LogWarning($"> {PluginPackageName} - Work!" + Locale.Username);
 
 #if DEBUG
-        app.UseDevelopingServePluginFilesDefinition(this.GetType().Assembly, settings, [typeof(MainMyMarsPluginFront).Assembly]);
+        app.UseDevelopingServePluginFilesDefinition(GetType().Assembly, settings, [typeof(MainMyMarsPluginFront).Assembly]);
 #endif
 
         //some option

@@ -1,6 +1,11 @@
+using Mars.Host.Data.Constants;
+using Mars.Host.Data.Contexts;
 using Mars.Host.Data.Contexts.Abstractions;
+using Mars.Host.Data.Options;
+using Mars.Host.Data.PostgreSQL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using MyMarsPlugin.Data.Entities;
 
@@ -36,13 +41,14 @@ public partial class MyMarsPluginDbContext : PluginDbContextBase
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
-    public new static MyMarsPluginDbContext CreateInstance(string connectionString)
+    public static MyMarsPluginDbContext CreateInstance(string connectionString)
     {
         var builder = new DbContextOptionsBuilder<MyMarsPluginDbContext>();
 
-        builder.UseNpgsql(connectionString);
-        builder.UseSnakeCaseNamingConvention();
-        builder.EnableDetailedErrors();
+        var connectOpt = new DatabaseConnectionOpt() { ConnectionString = connectionString, ProviderName = DatabaseProviderConstants.PostgreSQL };
+        var factory = new MarsDbContextPostgreSQLForPluginFactory(connectOpt, typeof(MyMarsPluginDbContext).Assembly, MainMyMarsPlugin.PluginPackageName);
+        factory.OptionsBuilderAction(builder);
+        ((IDbContextOptionsBuilderInfrastructure)builder).AddOrUpdateExtension(new MarsDbContextOptionExtension(factory));
 
         return new MyMarsPluginDbContext(builder.Options);
     }

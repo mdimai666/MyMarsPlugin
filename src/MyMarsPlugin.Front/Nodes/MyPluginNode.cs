@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Mars.Core.Attributes;
 using Mars.Nodes.Core;
-using Mars.Nodes.Core.Nodes;
+using Mars.Nodes.Core.Fields;
 
 namespace MyMarsPlugin.Front.Nodes;
 
@@ -17,7 +17,7 @@ public class MyPluginNode : Node
     {
         Inputs = [new()];
         Color = "#3fc9af";
-        Outputs = new List<NodeOutput> { new NodeOutput() };
+        Outputs = [new()];
         Icon = "/_plugin/MyMarsPlugin/nodes/img/icon.png";
     }
 }
