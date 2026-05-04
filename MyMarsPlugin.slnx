@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitattributes" />
+    <File Path=".gitignore" />
+    <File Path="README.md" />
+    <File Path="rename.ps1" />
+  </Folder>
+  <Project Path="src/MyMarsPlugin.Front/MyMarsPlugin.Front.csproj" />
+  <Project Path="src/MyMarsPlugin.Shared/MyMarsPlugin.Shared.csproj" />
+  <Project Path="src/MyMarsPlugin/MyMarsPlugin.csproj" />
+</Solution>
