@@ -9,7 +9,7 @@ if (-not $newName.EndsWith("Plugin")) {
 $scriptName = $MyInvocation.MyCommand.Name
 
 # Расширения, которые нужно обрабатывать
-$allowedExtensions = @(".sln", ".csproj", ".cs", ".razor", ".js", ".css", ".json")
+$allowedExtensions = @(".sln", ".slnx", ".csproj", ".cs", ".razor", ".js", ".css", ".json")
 
 # Функция для рекурсивного переименования папок
 function Rename-Folders {
