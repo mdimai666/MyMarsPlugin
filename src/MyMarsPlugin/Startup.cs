@@ -40,7 +40,7 @@ public class MainMyMarsPlugin : WebApplicationPlugin
         logger.LogWarning($"> {PluginPackageName} - Work!" + Locale.Username);
 
 #if DEBUG
-        app.UseDevelopingServePluginFilesDefinition(GetType().Assembly, settings, [typeof(MainMyMarsPluginFront).Assembly]);
+        app.UseDevelopingServePluginFilesDefinition(GetType().Assembly, settings, [typeof(MainMyMarsPluginFront).Assembly, GetType().Assembly]);
 #endif
 
         //some option
