@@ -1,5 +1,5 @@
 using Mars.Nodes.Core;
-using Mars.Nodes.Core.Implements;
+using Mars.Nodes.Host.Shared;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MyMarsPlugin.Front.Nodes;
@@ -7,35 +7,35 @@ using MyMarsPlugin.Services;
 
 namespace MyMarsPlugin.FrontImplement;
 
-public class MyPluginNodeImpl : INodeImplement<MyPluginNode>, INodeImplement
+public class MyPluginNodeImpl : INodeImplement<MyPluginNode>
 {
     private readonly ILogger<MyPluginNodeImpl> _logger;
 
     public MyPluginNode Node { get; }
-    public IRED RED { get; set; }
-    Node INodeImplement<Node>.Node => Node;
+    public IRuntimeNodeScope RNS { get; set; }
+    Node INodeImplement.Node => Node;
 
-    public MyPluginNodeImpl(MyPluginNode node, IRED red)
+    public MyPluginNodeImpl(MyPluginNode node, IRuntimeNodeScope rns)
     {
         Node = node;
-        RED = red;
+        RNS = rns;
 
-        Node.Config = RED.GetConfig(node.Config);
-        _logger = RED.ServiceProvider.GetRequiredService<ILogger<MyPluginNodeImpl>>();
+        Node.Config = RNS.GetConfig(node.Config);
+        _logger = RNS.ServiceProvider.GetRequiredService<ILogger<MyPluginNodeImpl>>();
     }
 
     public Task Execute(NodeMsg input, ExecuteAction callback, ExecutionParameters parameters)
     {
         _logger.LogTrace("Execute");
 
-        var myService = RED.ServiceProvider.GetRequiredService<MyPluginService>();
+        var myService = RNS.ServiceProvider.GetRequiredService<MyPluginService>();
         var message = myService.GetValue(input.Payload.ToString()!);
 
         input.Payload = message;
         callback(input);
 
-        RED.Status(new NodeStatus(Random.Shared.Next(1, 10).ToString()));
-        RED.DebugMsg(DebugMessage.NodeMessage(Node.Id, message));
+        RNS.Status(new NodeStatus(Random.Shared.Next(1, 10).ToString()));
+        RNS.DebugMsg(DebugMessage.NodeMessage(Node.Id, message));
 
         return Task.CompletedTask;
     }
