@@ -5,8 +5,9 @@ using Microsoft.Extensions.Logging;
 using MyMarsPlugin.Front.Nodes;
 using MyMarsPlugin.Services;
 
-namespace MyMarsPlugin.FrontImplement;
+namespace MyMarsPlugin.NodesImplements;
 
+// Lifetime scope is Singletone
 public class MyPluginNodeImpl : INodeImplement<MyPluginNode>
 {
     private readonly ILogger<MyPluginNodeImpl> _logger;
@@ -15,13 +16,13 @@ public class MyPluginNodeImpl : INodeImplement<MyPluginNode>
     public IRuntimeNodeScope RNS { get; set; }
     Node INodeImplement.Node => Node;
 
-    public MyPluginNodeImpl(MyPluginNode node, IRuntimeNodeScope rns)
+    public MyPluginNodeImpl(MyPluginNode node, IRuntimeNodeScope rns, ILogger<MyPluginNodeImpl> logger) // Singletone Services only
     {
         Node = node;
         RNS = rns;
+        _logger = logger;
 
         Node.Config = RNS.GetConfig(node.Config);
-        _logger = RNS.ServiceProvider.GetRequiredService<ILogger<MyPluginNodeImpl>>();
     }
 
     public Task Execute(NodeMsg input, ExecuteAction callback, ExecutionParameters parameters)
