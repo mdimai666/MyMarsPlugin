@@ -37,10 +37,10 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="mdimai666.Mars.Host.Data" Version="0.7.7-alpha.19" />
-        <PackageReference Include="mdimai666.Mars.Host.Data.PostgreSQL" Version="0.7.7-alpha.19" />
-        <PackageReference Include="mdimai666.Mars.Plugin.PluginPublishScript" Version="0.7.7-alpha.19" />
-        <PackageReference Include="mdimai666.Mars.Plugin.Kit.Host" Version="0.7.7-alpha.19" />
+        <PackageReference Include="mdimai666.Mars.Host.Data" Version="0.7.7-alpha.20" />
+        <PackageReference Include="mdimai666.Mars.Host.Data.PostgreSQL" Version="0.7.7-alpha.20" />
+        <PackageReference Include="mdimai666.Mars.Plugin.PluginPublishScript" Version="0.7.7-alpha.20" />
+        <PackageReference Include="mdimai666.Mars.Plugin.Kit.Host" Version="0.7.7-alpha.20" />
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.300" PrivateAssets="All" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="10.0.9" PrivateAssets="all" />
     </ItemGroup>

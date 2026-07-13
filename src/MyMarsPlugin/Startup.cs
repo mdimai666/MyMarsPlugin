@@ -39,10 +39,6 @@ public class MainMyMarsPlugin : WebApplicationPlugin
         var logger = MarsLogger.GetStaticLogger<MainMyMarsPlugin>();
         logger.LogWarning($"> {PluginPackageName} - Work!" + Locale.Username);
 
-#if DEBUG
-        app.UseDevelopingServePluginFilesDefinition(GetType().Assembly, settings, [typeof(MainMyMarsPluginFront).Assembly, GetType().Assembly]);
-#endif
-
         //some option
         var optionService = app.Services.GetRequiredService<IOptionService>();
         optionService.RegisterOption<MyPluginOption>(appendToInitialSiteData: true);
