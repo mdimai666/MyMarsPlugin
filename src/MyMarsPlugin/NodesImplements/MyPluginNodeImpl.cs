@@ -1,5 +1,5 @@
+using Mars.Nodes.Abstractions;
 using Mars.Nodes.Core;
-using Mars.Nodes.Host.Shared;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MyMarsPlugin.Front.Nodes;

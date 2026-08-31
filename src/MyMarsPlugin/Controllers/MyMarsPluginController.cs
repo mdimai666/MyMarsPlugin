@@ -1,5 +1,5 @@
 using System.Net.Mime;
-using Mars.Host.Shared.ExceptionFilters;
+using Mars.Server.Abstractions.ExceptionFilters;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MyMarsPlugin.Services;

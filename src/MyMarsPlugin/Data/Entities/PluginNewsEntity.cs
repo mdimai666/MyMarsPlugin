@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
-using Mars.Host.Data.Entities;
+using Mars.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using MyMarsPlugin.Data.Configurations;
 
@@ -30,7 +30,6 @@ public class PluginNewsEntity
     [Comment("ИД пользователя")]
     public Guid UserId { get; set; }
     public virtual UserEntity? User { get; set; }
-
 
     // Relations
     //public virtual ICollection<PluginNewsFilesEntity>? PostFiles { get; set; }
