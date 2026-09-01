@@ -14,11 +14,11 @@ using MyMarsPlugin.Services;
 using MyMarsPlugin.Shared.Options;
 using MyMarsPlugin.Shared.Resources;
 
-[assembly: WebApplicationPlugin(typeof(MainMyMarsPlugin))]
+[assembly: MarsPluginAttribute(typeof(MainMyMarsPlugin))]
 
 namespace MyMarsPlugin;
 
-public class MainMyMarsPlugin : WebApplicationPlugin
+public class MainMyMarsPlugin : MarsPlugin
 {
     public const string PluginPackageName = "MyPluginCompany.MyMarsPlugin";
 
