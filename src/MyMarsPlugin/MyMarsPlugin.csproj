@@ -1,25 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
     <PropertyGroup>
-        <TargetFramework>net10.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-
         <!--Public-->
         <PackageId>MyPluginCompany.MyMarsPlugin</PackageId>
-        <Version>0.0.1</Version>
-        <PackageVersion>0.0.1</PackageVersion>
-        <Authors>MyPluginCompany</Authors>
-        <Company>MyPluginCompany</Company>
         <Product>MyMarsPlugin</Product>
-        <PackageTags>Mars;</PackageTags>
+        <Title>MyMarsPlugin</Title>
         <Description>
             Plugin template
         </Description>
-        <PackageIcon>icon.png</PackageIcon>
         <RepositoryUrl>https://github.com/mdimai666/MyMarsPlugin</RepositoryUrl>
-        <RepositoryType>git</RepositoryType>
-        <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <PublishRepositoryUrl>true</PublishRepositoryUrl>
 
         <EnableDynamicLoading>true</EnableDynamicLoading>
     </PropertyGroup>
@@ -37,10 +25,9 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="mdimai666.Mars.Data.PostgreSQL" Version="0.8.2-alpha.5" />
-        <PackageReference Include="mdimai666.Mars.Plugin.Sdk" Version="0.8.2-alpha.5" PrivateAssets="all" />
-        <PackageReference Include="mdimai666.Mars.Plugin.Kit.Host" Version="0.8.2-alpha.5" />
-        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.400" PrivateAssets="All" />
+        <PackageReference Include="mdimai666.Mars.Data.PostgreSQL" Version="$(MarsVersion)" />
+        <PackageReference Include="mdimai666.Mars.Plugin.Sdk" Version="$(MarsVersion)" PrivateAssets="all" />
+        <PackageReference Include="mdimai666.Mars.Plugin.Kit.Host" Version="$(MarsVersion)" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="10.0.11" PrivateAssets="all" />
     </ItemGroup>
 
