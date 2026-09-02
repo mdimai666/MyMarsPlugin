@@ -33,7 +33,9 @@ $newPluginName = "MyNewPlugin"; git clone https://github.com/mdimai666/MyMarsPlu
 ```
 
 `prepare.ps1` переименовывает проекты/файлы/содержимое (включая `.github` и `release.ps1`)
-и удаляет служебные файлы шаблона. После этого обновите `PackageId`, `Description`,
+и удаляет служебные файлы шаблона. Имя можно задавать с точками (`Mars.TelegramPlugin`) —
+папки/файлы/namespace получат полное имя, а имена классов — без точек
+(`MainMarsTelegramPlugin`). После этого обновите `PackageId`, `Description`,
 `RepositoryUrl` (и при желании `Product`/`Title`) в `src/<Имя>/<Имя>.csproj`, `Authors`/`Company`
 в корневом `Directory.Build.props` и `assets/icon.png`.
 

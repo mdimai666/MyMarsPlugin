@@ -3,8 +3,9 @@
     <File Path=".editorconfig" />
     <File Path=".gitattributes" />
     <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
     <File Path="README.md" />
-    <File Path="rename.ps1" />
+    <File Path="release.ps1" />
   </Folder>
   <Project Path="src/MyMarsPlugin.Front/MyMarsPlugin.Front.csproj" />
   <Project Path="src/MyMarsPlugin.Shared/MyMarsPlugin.Shared.csproj" />
