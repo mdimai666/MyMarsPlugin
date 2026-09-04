@@ -6,7 +6,7 @@
         <!-- Версия пакетов Марса (Mars.Plugin.Sdk, Mars.Plugin.Kit.*, Mars.Data.*): выравнивать с релизом
              Марса (MarsAppVersion в Directory.Build.props репозитория Mars). Плагин пакуется
              инструментом той версии платформы, для которой предназначен. -->
-        <MarsVersion>0.8.3-alpha.13</MarsVersion>
+        <MarsVersion>0.8.3-alpha.14</MarsVersion>
     </PropertyGroup>
 
     <PropertyGroup>
