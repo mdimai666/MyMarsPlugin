@@ -10,7 +10,7 @@
 <EditOptionForm @ref=form TModel="MyPluginOption">
     <h3>Настройки MyPluginOption</h3>
     <FormItem2 For=@(() => context.OptionValue)>
-        <FluentTextField @bind-Value=context.OptionValue Class="" />
+        <FluentTextInput @bind-Value=context.OptionValue Class="" />
     </FormItem2>
 </EditOptionForm>
 
